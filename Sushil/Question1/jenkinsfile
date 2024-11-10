@@ -14,7 +14,7 @@ environment {
     stages {
         stage('Git CheckOut') {
             steps {
-                git changelog: false, poll: false, url: 'https://github.com/palsushil031/Secrets-shanta.git'
+                checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/palsushil031/Assignment-Repo']])
             }
         }
 
