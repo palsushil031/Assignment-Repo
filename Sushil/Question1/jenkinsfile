@@ -23,7 +23,13 @@ environment {
                 sh 'mvn clean compile'
             }
         }
-
+        stage('Test') {
+            steps {
+                script {
+                    sh 'mvn test'
+                }
+            }
+        }
         stage('SonarQube Analysis') {
             steps {
             sh ''' $SCANNER_HOME/bin/sonars-canner -Dsonar.url=http://http://54.91.53.63:9000/ 
